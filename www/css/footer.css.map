@@ -1,0 +1,1 @@
+{"version":3,"sources":["footer.sass"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,aAAa,EAKI;EAPnB;IAII,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU,EAAG","file":"footer.css","sourcesContent":["footer {\n  background: #000;\n  height: 30px;\n  p {\n    color: #fff;\n    text-align: center;\n    line-height: 30px;\n    margin: 0; } }\n"]}

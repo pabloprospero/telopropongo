@@ -1,0 +1,132 @@
+html, body {
+  height: 100%;
+  overflow-y: hidden; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  background: #000; }
+
+a {
+  color: #ff9300;
+  text-decoration: none; }
+  a:hover {
+    color: #fff;
+    text-decoration: none; }
+
+.center-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.center-vertical {
+  position: relative;
+  -webkit-transform: translateY(30%);
+  transform: translateY(30%); }
+
+.small-font {
+  font-size: 15px; }
+
+.middle-font {
+  font-size: 25px; }
+
+.bold-font {
+  font-weight: bold; }
+
+.big-font {
+  font-size: 35px; }
+
+.container-fluid {
+  max-width: 1170px;
+  position: relative; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.overlay-black {
+  background: rgba(0, 0, 0, 0.7); }
+
+.overlay-white {
+  background: rgba(255, 255, 255, 0.7); }
+
+.btn {
+  height: 20px;
+  padding: 5px 10px;
+  line-height: 20px;
+  font-size: 15px;
+  box-shadow: 2px 2px 1px #000;
+  margin: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.btn-reserva {
+  background: #ff9300;
+  color: #333; }
+  .btn-reserva:hover {
+    color: #000;
+    text-decoration: none; }
+  .btn-reserva:focus {
+    color: #000;
+    text-decoration: none; }
+
+.btn-confirm {
+  background: #ff9300;
+  color: #333;
+  height: 30px;
+  box-shadow: none;
+  border: none; }
+  .btn-confirm:hover, .btn-confirm:focus {
+    background: #ff7800;
+    color: #333; }
+
+.btn-cancel {
+  background: #333;
+  color: #ccc;
+  height: 30px;
+  box-shadow: none; }
+  .btn-cancel:hover, .btn-cancel:focus {
+    background: #111;
+    color: #ccc; }
+
+.close-window {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/close.png");
+  background-position: center;
+  background-size: cover; }
+
+.icon-modal {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: cover; }
+
+.icon-modal-question {
+  background-image: url("../images/question.svg"); }
+
+.icon-modal-confirm {
+  background-image: url("../images/hotel/room-good.svg"); }
+
+.icon-modal-promo {
+  background-image: url("../images/ico-promo.svg"); }
+
+.icon-modal-download {
+  background-image: url("../images/download.svg"); }
+
+.blue {
+  color: #51a2de; }
+
+.pink {
+  color: #fd70a3; }
+
+/*# sourceMappingURL=general.css.map */

@@ -1,0 +1,409 @@
+//$first-color: #000
+//$second-color: #ff9300
+
+.title
+  text-align: center
+  padding: 35px 0 28px 0
+#loading
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-image: url('../images/bg-loader.jpg')
+  background-size: cover
+  transition: all 0.5s ease
+  z-index: 2000
+  .logo
+    width: 100px
+    height: 100px
+    margin: auto
+    background: url('../images/logotipo.png') no-repeat
+    background-size: cover
+  .ajaxLoad
+    position: relative
+    height: 174px
+  .cont-loading
+    p
+    color: #fff
+    text-align: center
+#contMap
+  width: 100%
+  height: calc(100% - 80px)
+  #map
+    height: 100%
+    width: 100%
+    .infowindow
+      background: #111 !important
+      border-top-left-radius: 6px !important
+      border-bottom-right-radius: 6px !important
+      .punta
+        background: #111 !important
+    .gm-style-iw
+      text-align: center
+      color: #fff
+      font-size: 15px
+      hr
+        margin: 0
+        opacity: 0.2
+      a
+        background: #ff9300
+        color: #333
+        height: 20px
+        padding: 0 10px
+        line-height: 20px
+        font-size: 15px
+        box-shadow: 2px 2px 1px #000
+        margin: 10px
+        &:hover
+          cursor: pointer
+          text-decoration: none
+#infoHotel
+  position: fixed
+  height: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  background: #000
+  opacity: 0
+  transition: all 0.5s ease
+  color: #888
+  overflow-y: auto
+  overflow-x: hidden
+  .bg-cat
+    min-height: 250px
+    position: relative
+    background-position: center
+    background-size: cover
+    cursor: pointer
+    &:hover > .overlay-black
+      background: rgba(0,0,0,0)
+    h3
+      margin: 0
+      color: #ccc
+      text-shadow: 1px 1px 1px #000
+      a
+        color: #fff
+        font-weight: lighter
+        text-shadow: 1px 1px 1px #000
+        &:focus
+          text-decoration: none
+  #bannerHotel
+    background-size: cover
+    background-position: center
+    width: 100%
+    min-height: 270px
+    position: relative
+    text-align: center
+    transition: all 0.5s ease
+    .center-center-isopen
+      left: 6px
+      top: 13px
+      transform: translate(0px, 0px)
+      width: 100%
+      text-align: left
+      text-indent: 50px
+      width: 308px
+      .logo
+        float: left
+        width: 100px
+        height: 100px
+      h2
+        font-size: 25px
+        text-indent: 6px
+      .address
+        text-indent: 6px
+    .logo
+      width: 163px
+      height: 163px
+      background-size: cover
+      background-position: center
+      border: solid 2px #4a4a4a
+      transition: all 0.5s ease
+    h2
+      margin: 0
+      text-indent: -15px
+    h3
+      color: #777
+      transition: all 0.5s ease
+    p.address
+      color: #ccc
+      text-shadow: 1px 1px 1px #000
+      transition: all 0.5s ease
+      text-indent: 15px
+    p.description
+      color: #ccc
+      text-shadow: 1px 1px 1px #000
+      transition: all 0.5s ease
+      text-indent: 15px
+    .ifroom
+      position: absolute
+      bottom: -24px
+      right: 50px
+      z-index: 2
+      transition: all 0.5s ease
+      div
+        padding: 7px 12px 5px 4px
+        border-radius: 40px
+        color: #fff
+        overflow: hidden
+        width: 200px
+        white-space: nowrap
+        transition: all 0.5s ease
+        opacity: 1
+        img
+          position: relative
+          top: -1px
+      .room-bad
+        background: grey
+      .room-good
+        background: green
+
+.info-hotel-active
+  height: calc(100% - 50px) !important
+  opacity: 1 !important
+.cont-categorias
+  position: relative
+  > div
+    > h3
+      margin: 0
+      position: absolute
+      left: 0
+      top: 0
+      background: rgba(255, 147, 0, 0.7)
+      padding: 10px 50px 10px 35px
+      z-index: 2
+      color: #2e2107
+      font-weight: normal
+      box-shadow: 1px 1px 2px #000
+  .image-room
+    background-position: center
+    background-size: cover
+    min-height: 250px
+    transition: all 0.5s ease
+    &:hover > .overlay
+      opacity: 1
+    .overlay
+      opacity: 0
+    a
+      display: block
+      min-height: 250px
+      i
+        width: 50px
+        height: 50px
+        background-image: url('../images/search-white.svg')
+        background-repeat: no-repeat
+        background-size: cover
+  .content-room
+    padding-bottom: 33px
+.details
+  position: relative
+  text-align: center
+  padding-bottom: 22px
+  p
+    margin: auto
+    padding: 10px 15px
+    display: table
+    z-index: 2
+    color: #fff
+    font-weight: bold
+  table
+    max-width: 350px
+    margin: auto
+    width: 100%
+    tr
+      border-bottom: solid 1px #252525
+      td
+        padding: 10px
+        text-align: left
+      td.right
+        text-align: right
+.modal
+  background: rgba(0,0,0,0.7)
+.modal-header
+  background: #111
+  position: relative
+  overflow: hidden
+  &::before
+    position: absolute
+    background: rgba(255,255,255,0.05)
+    width: 110%
+    height: 64px
+    top: -38px
+    left: -6px
+    -ms-transform: rotateZ(-6deg)
+    -webkit-transform: rotateZ(-6deg)
+    transform: rotateZ(-6deg)
+.modal-body
+  text-align: center
+  table
+    tr
+      td
+        text-align: left
+  .form-group
+    margin-bottom: 10px !important
+    label
+      display: block
+      font-size: 15px
+      color: #555
+    input[type="text"]
+      width: 100%
+      height: 30px
+      line-height: 30px
+      padding: 0 10px
+      color: #555
+      clear:both
+.modal-footer
+  border-top: none
+#search
+  position: fixed
+  height: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  background: #000
+  opacity: 0
+  transition: all 0.5s ease
+  color: #888
+  overflow-y: auto
+  overflow-x: hidden
+  .container-fluid
+    padding: 0 15px
+    #tableSearch_length
+      float: left
+    #tableSearch_filter
+      //width: 100% !important
+      label
+        color: transparent
+        text-indent: -10000px
+    table
+      thead
+        tr
+          th
+            text-align: left !important
+            font-weight: lighter !important
+      tbody
+        tr
+          background: transparent !important
+          td
+            padding: 8px 18px !important
+            a
+              color: #888 !important
+              &:hover
+                cursor: pointer
+                color: #888 !important
+                text-decoration: none
+              i
+                display: inline-block
+                width: 15px
+                height: 15px
+                background-position: center
+                background-size: cover
+                background-image: url('../images/ico-promo.svg')
+                margin: 5px 0 -4px 5px
+        tr.odd
+          background: #0a0a0a !important
+input[type="search"]
+  width: 100%
+  height: 40px
+  line-height: 40px
+  color: #555 !important
+  border: none
+  margin: 15px 0
+  text-indent: 15px
+.appear-section-search
+  height: calc(100% - 50px) !important
+  opacity: 1 !important
+.bar-social
+  position: absolute
+  bottom: -35px
+  left: 0
+  padding: 0
+  margin: 0
+  height: 120px
+  transition: all 0.5s ease
+  background: #000
+  li
+    display: block
+    margin: 3px
+    &:first-child
+      margin-left: 4px
+    &:last-child
+      margin-right: 4px
+    a
+      display: block
+      width: 26px
+      height: 26px
+      background-size: cover
+      background-image: url('../images/share-icons.png')
+    .social-facebook
+      background-position: 0px top
+    .social-instragram
+      background-position: 79px top
+    .social-youtube
+      background-position: 54px top
+    .icon-contact
+      background-image: none
+.contador
+  position: absolute
+  bottom: 0
+  right: 17px
+  background: #d3dfe3
+  height: 33px
+  padding: 5px
+  cursor: pointer
+  i, span, b
+    display: inline-block
+  span, b
+    position: relative
+    top: -8px
+    padding: 0 5px
+  span
+    border-right: solid 1px #8c8c8c
+#generoBox
+  display: none
+  .overlay
+    .contentGenero
+      width: 100%
+      height: 435px
+      background: #fff
+      transition: all 0.5s ease
+      text-align: center
+      overflow: hidden
+      .icon-genero
+        display: block
+        background-size: 200% 105%
+        background-image: url('../images/genero.png')
+        width: 150px
+        height: 148px
+        border-bottom: solid 5px #000
+        transition: all 0.2s ease
+        position: relative
+        &:hover
+          margin-top: -15px
+      .icon-man
+        background-position: left top
+      .icon-woman
+        background-position: right top
+      .cont-age
+        clear: both
+        select
+          width: 65px
+          height: 32px
+          line-height: 50px
+          font-size: 22px
+          text-align: center
+          margin-bottom: 50px
+        .btn
+          padding: 6px 10px
+          position: relative
+          top: -3px
+#servicesAvailables
+  ul
+    padding: 5px 5px
+    background: #000
+    margin: 0
+    li
+      list-style: none
+      display: inline-block
+      margin: 0 3px

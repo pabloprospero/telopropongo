@@ -1,0 +1,87 @@
+header {
+  background: #000;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  header .container-fluid {
+    min-height: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    header .container-fluid h1 {
+      background-image: url("../images/logotipo.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      text-indent: -10000px;
+      width: 122px;
+      height: 40px;
+      margin: 0;
+      opacity: 0;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+    header .container-fluid #goBack {
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      left: 15px;
+      width: 50px;
+      height: 50px;
+      background-image: url("../images/back.svg");
+      background-size: cover;
+      opacity: 0.5;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    header .container-fluid .hidenback {
+      left: -500px !important; }
+  header .have-promo {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 50px;
+    background: #000;
+    height: 50px; }
+    header .have-promo a {
+      display: block;
+      width: 27px;
+      height: 27px;
+      background-position: center;
+      background-size: cover;
+      background-image: url("../images/ico-promo.svg"); }
+    header .have-promo i {
+      display: block;
+      width: 68px;
+      height: 11px;
+      background-position: center;
+      background-size: cover;
+      background-image: url("../images/promotxt.png");
+      position: absolute;
+      bottom: -4px;
+      left: -9px;
+      z-index: 1;
+      opacity: 0;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+
+.appearsearch {
+  background-image: url("../images/search-white.svg");
+  background-size: cover;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  height: 30px;
+  width: 30px;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.hidensearch {
+  display: none; }
+
+/*# sourceMappingURL=header.css.map */

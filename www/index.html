@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_token" content="{!! csrf_token() !!}"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/lightbox.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
+    <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/lightbox.js" charset="utf-8"></script>
+    <script src="js/jquery.dataTables.min.js" charset="utf-8"></script>
+    <script src="js/jquery.countdown.min.js" charset="utf-8"></script>
+    <script src="js/errors.js" charset="utf-8"></script>
+    <script src="js/moteles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/categorias.js"></script>
+    <script src="js/habitaciones.js"></script>
+    <script src="js/ajax.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/maps.js" charset="utf-8"></script>
+  </head>
+  <body>
+ 
+  <header>
+  <div id="getting-started"></div>
+  <div class="container-fluid">
+    <a href="#" class="appearsearch"></a>
+    <a href="#" class="center-center hidenback" id="goBack" onclick="backStack();"></a>
+    <h1>Telo Porpongo</h1>
+    <div id="containerPromo">
+    </div>
+  </div>
+</header>
+<section id="contMap">
+   <div id="map"></div>
+</section>
+
+<!-- presento info de hoteles aquí -->
+<section id="infoHotel" class="">
+  <!-- cargo la imagen de fondo en el styletag -->
+  <div id="bannerHotel">
+    <div class="overlay overlay-black">
+      <!-- cargo el logo como fondo en el styletag -->
+      <div class="center-center">
+        <div id="logo" class="logo pull-left"></div>
+        <div class="pull-left center-vertical">
+          <h2 class="big-font" id="nombreHotel"></h2>
+          <p class="address" id="direccionHotel"></p>
+          <p class="description" id="descripcion"></p>
+        </div>
+      </div>
+      <!-- mensaje de habitación disponible -->
+      <div class="ifroom" id="habitacionesState">
+      </div>
+    </div>
+  </div>
+  <div id="servicesAvailables">
+    <ul>
+    </ul>
+  </div>
+    <div class="cont-categorias">
+      <!-- imprimo aca info del hotel (muestra categorías) -->
+      <div class="step step1" data-step="1">
+        <h3>Categorías</h3>
+      </div>
+      <!-- imprimo aca info de categorías (muestra rooms) -->
+      <div class="step step2" data-step="2">
+
+      </div>
+      <!-- imprimo aca info de la habitación (muestra room) -->
+      <div class="step step3" data-step="3">
+
+      </div>
+    </div>
+  </div>
+
+</section>
+<!--<ul class="letter-social bar-social">
+  <li><a class="social-facebook action-social" href="http://facebook.com/teloproapp" target="_blank" title=""></a></li>
+  <li><a class="social-instragram action-social" href="http://instagram.com/telopropongoapp" target="_blank" title=""></a></li>
+  <li><a class="social-youtube action-social" href="https://m.youtube.com/channel/UCSQefUFxk5HW5HVqmy4e1hw" target="_blank" title=""></a></li>
+  <li><a class="icon-contact" data-toggle="modal" data-target="#myModal" onclick="contactForm();" href="#" target="_blank" title=""><i style="font-size: 26px" class="material-icons">&#xE0BE;</i></a></li>
+</ul-->
+<section id="search">
+  <div class="container-fluid">
+    <table id="tableSearch">
+      <thead>
+        <tr>
+          <th>
+            Nombre
+          </th>
+          <th>
+            Dirección
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tablabusqueda">
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- imprimo aquí las opciones de género y edad -->
+@if (Session::has('username'))
+  <section id="generoBox" class="hide">
+  <script>
+    getDataSession();
+  </script>
+@else
+  <section id="generoBox" class="firstModal">
+@endif
+  <div class="overlay overlay-black">
+    <div class="center-center contentGenero">
+      <div class="center-center">
+        <div style="margin: auto; width: 90%; min-width: 500px">
+          <p class="middle-font">
+            Selecciona tu género
+          </p>
+          <div class="pull-left">
+            <a href="#" class="icon-genero icon-man" onclick="selectGenero('icon-man');"></a>
+            <p class="small-font blue">
+              Chico
+            </p>
+          </div>
+          <div class="pull-right">
+            <a href="#" class="icon-genero icon-woman" onclick="selectGenero('icon-woman');"></a>
+            <p class="small-font pink">
+              Chica
+            </p>
+          </div>
+          <div class="cont-age">
+            <p class="middle-font">
+              ¿Cuál es tu edad?
+            </p>
+            <select id="edad" class="" name="edad">
+                <option selected value="18">18</option>
+              @for ($age = 19; $age <= 70; $age++)
+                <option value="{{ $age }}">{{ $age }}</option>
+              @endfor
+              ?>
+            </select>
+            <a href="#" id="selectedGenero" onclick="checkAndSend()"  class="btn btn-confirm big-font">Listo!</a>
+          </div>
+          <p id="errorGenero" class="center"><p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- loading page -->
+<div id="loading">
+  <div class="center-center">
+    <div class="ajaxLoad">
+      <link rel="stylesheet" href="loader/style.css" media="screen" title="no title">
+          <div class="loaderContainer">
+          <div class="loaderSombra"></div>
+        <div class="loaderLogo"></div>
+      </div>
+    </div>
+    <div class="title">
+      <a href="https://www.telopropongo.com/" target="_blank" class="big-font">TeloPropongo</a>
+    </div>
+    <div class="cont-loading">
+      <p>
+      Cargando...
+      </p>
+  </div>
+  </div>
+</div>
+<!-- Modal -->
+@if (Session::has('username'))
+  <div id="myModal" class="modal" role="dialog">
+@else
+  <div id="myModal" class="modal firstModal" role="dialog">
+@endif
+  <!--<div class="modal-dialog">
+    Modal content
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="icon-modal pull-left"></div>
+      <a href="#" data-dismiss="modal" class="close-window pull-right"></a>
+    </div>
+    <div class="modal-body">
+      <p class="middle-font">
+        <b>¡Mejora la experiencia descargando la App!</b>
+      </p>
+      <p class="middle-font" style="margin: 0">Disponible en</p>
+      <a href="#" target="_blank"><img src="images/icon-googleplay.png" style="width: 100%; max-width: 300px" alt="" /></a>
+      <p class="small-font" style="margin: 0">¡Descargala ahora!<br /><a href="#" target="_blank"><img src="images/download-black.svg" style="width: 50px" alt="" /></a></p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+  </div>-->
+</div>
+
+<footer>
+  <div class="container-fluid">
+    <p class="small-font">
+      Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1m4EN-czvotETvxkK8Ur-bHenDngPr6g"></script>
+
+
+
+<!-- agrego js si esta dentor de una categoría -->\
+
+<script type="text/javascript">
+$(window).on('load', function(){
+  initialize();
+  getMoteles();
+
+});
+</script>
+</body>
+</html>

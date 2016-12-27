@@ -1,0 +1,44 @@
+@media screen and (max-width: 768px) {
+  body {
+    overflow-y: hidden; }
+  #infoHotel #bannerHotel .center-center {
+    width: 90%;
+    text-align: center;
+    top: 36%; }
+    #infoHotel #bannerHotel .center-center .logo {
+      margin: auto;
+      float: none !important;
+      width: 100px;
+      height: 100px; }
+    #infoHotel #bannerHotel .center-center .pull-left {
+      float: none !important; }
+      #infoHotel #bannerHotel .center-center .pull-left h2 {
+        text-indent: 0;
+        font-size: 25px; }
+  #infoHotel #bannerHotel .ifroom {
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    bottom: 15px; }
+  header .container-fluid h1 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  footer {
+    display: none; }
+  #contMap {
+    height: calc(100% - 50px); }
+  .contador {
+    right: 0; }
+  #infoHotel .bg-cat {
+    border-bottom: solid 5px #5f5f5f; } }
+
+@media screen and (max-width: 425px) {
+  #generoBox .overlay .contentGenero .center-center > div {
+    min-width: 300px !important; }
+    #generoBox .overlay .contentGenero .center-center > div .icon-genero {
+      width: 100px;
+      height: 100px; } }
+
+/*# sourceMappingURL=media.css.map */

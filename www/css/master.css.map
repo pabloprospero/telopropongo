@@ -1,0 +1,1 @@
+{"version":3,"sources":["master.sass"],"names":[],"mappings":"AAAA,yBAAO;AACP,wBAAO;AACP,wBAAO;AACP,wBAAO;AACP,uBAAO","file":"master.css","sourcesContent":["@import \"general.css\";\n@import \"header.css\";\n@import \"middle.css\";\n@import \"footer.css\";\n@import \"media.css\";\n"]}

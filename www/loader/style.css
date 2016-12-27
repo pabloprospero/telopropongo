@@ -1,0 +1,75 @@
+.loaderContainer{
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  height: 228px;
+  margin-left: -67px;
+}
+.loaderLogo{
+  position: absolute;
+  bottom: 10px;
+  background-image: url('logo.png');
+  background-position: center;
+  background-size: cover;
+  width: 90px;
+  height: 128px;
+  animation-name: logo;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  left: 22px;
+}
+@keyframes logo {
+  0% {
+    bottom: 10px;
+    transform: rotateZ(0deg);
+  }
+  25% {
+    bottom: 30px;
+    transform: rotateZ(10deg);
+  }
+  50% {
+    bottom: 70px;
+    transform: rotateZ(0deg);
+  }
+  75% {
+    bottom: 30px;
+    transform: rotateZ(-10deg);
+  }
+}
+.loaderSombra{
+  position: absolute;
+  bottom: 0px;
+  background-image: url('sombra.png');
+  background-position: center;
+  background-size: cover;
+  width: 117px;
+  margin-left: 10px;
+  animation-name: sombra;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes sombra {
+  0% {
+    width: 117px;
+    margin-left: 10px;
+  }
+  25% {
+    width: 98px;
+    margin-left: 21px;
+  }
+  50% {
+    width: 63px;
+    margin-left: 37px;
+  }
+  75% {
+    width: 98px;
+    margin-left: 21px;
+  }
+}
+.loaderSombra::before{
+  content: '';
+  display: block;
+  padding-top: 13.5%;
+}
